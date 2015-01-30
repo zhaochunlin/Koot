@@ -4,9 +4,7 @@
 package demo.maven;
 
 /**
- * 这是一个测试出
- * @author zhaochunlin
- *
+ * 
  */
 public class HelloWorld {
 
