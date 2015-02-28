@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	">
+
+	<description>本文件Spring Context的主文件，由它导入其他上下文文件</description>
+	
+	<!-- 自动扫描service包下所有文件 -->
+	<context:component-scan base-package="com.quanshi.boss">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	<context:property-placeholder location="classpath:applicationContext.properties" ignore-unresolvable="true"/>
+</beans>

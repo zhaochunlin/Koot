@@ -14,6 +14,12 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -55,7 +61,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>helloworld</finalName>
+		<finalName>demo</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -114,9 +120,11 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	
 	<properties>
 		<junit.version>4.1.1</junit.version>
 		<checkstyle.config.location>checkstyle.xml</checkstyle.config.location>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>3.1.4.RELEASE</spring.version>
 	</properties>
 </project>
