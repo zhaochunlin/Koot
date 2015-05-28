@@ -9,8 +9,11 @@
 	<description>本文件Spring Context的主文件，由它导入其他上下文文件</description>
 	
 	<!-- 自动扫描service包下所有文件 -->
-	<context:component-scan base-package="com.quanshi.boss">
+	<context:component-scan base-package="demo.maven.service">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	<context:property-placeholder location="classpath:applicationContext.properties" ignore-unresolvable="true"/>
+	<!-- 
+	<import resource="websocket.xml"/>
+	 -->
 </beans>

@@ -9,8 +9,15 @@
 <body>
 
 <div data-role="page" id="pageone">
-  <div data-role="header">
-  <h1>欢迎来到我的主页</h1>
+<div data-role="header">
+<h1>欢迎来到我的主页</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" data-icon="home">主页Home</a></li>
+        <li><a href="#" data-icon="arrow-r">第二页</a></li>
+        <li><a href="#" data-icon="search">搜索</a></li>
+      </ul>
+    </div>
   </div>
 
   <div data-role="content">

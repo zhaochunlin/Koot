@@ -7,14 +7,27 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>maven-demo-web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+
+	<properties>
+		<junit.version>4.1.1</junit.version>
+		<checkstyle.config.location>checkstyle.xml</checkstyle.config.location>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>4.1.6.RELEASE</spring.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.6</slf4j.version>
+		<logback.version>1.1.2</logback.version>
+		<commons-logging.version>1.2</commons-logging.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -27,10 +40,10 @@
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 			<type>jar</type>
-			<scope>private</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.http-client</groupId>
@@ -42,33 +55,60 @@
 			<artifactId>httpclient</artifactId>
 			<version>4.3.5</version>
 		</dependency>
-		
+
 		<!-- 日志依赖 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+			  <groupId>commons-logging</groupId>
+			  <artifactId>commons-logging</artifactId>
+			  <version>${commons-logging.version}</version>
+			</dependency>
+			
+		<!-- websocket -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>4.1.5.RELEASE</version>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.6.1</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>4.1.5.RELEASE</version>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.1</version>
-		</dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.3.3</version>
+        </dependency>
 	</dependencies>
 	<build>
 		<finalName>demo</finalName>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat6-maven-plugin</artifactId>
-					<version>2.2</version>
-				</plugin>
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat7-maven-plugin</artifactId>
@@ -92,10 +132,12 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<url>http://localhost:8080/manager/text</url>
-					<server>tomcat</server>
-					<username>admin</username>
-					<password>admin</password>
+					<url>http://10.100.142.30:8600/manager/text</url>
+					<path>/demo</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<server>tomcat-30</server>
+					<username>tomcat</username>
+					<password>tomcat</password>
 					<update>true</update>
 				</configuration>
 			</plugin>
@@ -120,11 +162,5 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	
-	<properties>
-		<junit.version>4.1.1</junit.version>
-		<checkstyle.config.location>checkstyle.xml</checkstyle.config.location>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>3.1.4.RELEASE</spring.version>
-	</properties>
+
 </project>
