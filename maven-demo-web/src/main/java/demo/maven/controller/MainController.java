@@ -2,8 +2,12 @@
 
 package demo.maven.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * ClassName:MainController <br/>
@@ -53,6 +57,16 @@ public class MainController {
     @RequestMapping("/jMobile/index")
     public String jMobileIndex(){
         return "jMobile/index";
+    }
+
+    @RequestMapping("/testJson")
+    @ResponseBody
+    public Map<String, String> testJson(){
+    	Map<String, String> result = new HashMap<String, String>();
+    	result.put("name", "58陪练");
+    	result.put("address", "望京·北京香颂223号楼204室");
+    	
+    	return result;
     }
 }
 

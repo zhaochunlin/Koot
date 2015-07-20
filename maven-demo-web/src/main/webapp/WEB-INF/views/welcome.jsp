@@ -4,6 +4,7 @@
 	<h2>Hello Spring Mvc!</h2>
 	<p>
 		<span><a href="jMobile/index">JMobile 首页</a></span>
+		<span><a href="testJson">测试JSon</a></span>
 	</p>
 </body>
 </html>
