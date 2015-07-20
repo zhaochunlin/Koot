@@ -54,7 +54,7 @@ public class MainController {
     * @return
     * @since 1.0
      */
-    @RequestMapping("/jMobile/index")
+    @RequestMapping(value="/jMobile/index", produces = "text/html;charset=UTF-8")
     public String jMobileIndex(){
         return "jMobile/index";
     }
