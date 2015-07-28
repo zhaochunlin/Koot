@@ -20,9 +20,15 @@
 	
 	<!-- Configures support for @Controllers -->
 	<mvc:annotation-driven />
+	
+	<!-- 静态资源处理 -->
+    <mvc:resources mapping="/scripts/**" location="/resources/javascript/"/> 
+    <mvc:resources mapping="/css/**" location="/resources/css/"/> 
+    
 	<mvc:default-servlet-handler />
 	<!-- 默认首页 -->
 	<mvc:view-controller path="/" view-name="redirect:/index" />
+	
 	<!-- 拦截器 -->
 	<mvc:interceptors>
 		<!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->  

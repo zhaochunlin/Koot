@@ -68,5 +68,10 @@ public class MainController {
     	
     	return result;
     }
+    
+    @RequestMapping(value="/bstrap/index", produces = "text/html;charset=UTF-8")
+    public String bootstrap(){
+        return "bootstrap/index";
+    }
 }
 
