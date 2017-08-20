@@ -13,7 +13,11 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.4.0.RELEASE</version>
     </parent>
-
+    <!-- 如果不想使用Spring Boot中的默认版本，可以在<properties>覆盖相应的版本，如，想使用不同版本的 JDK -->
+    <properties>
+        <!-- 使用 java 1.7 -->
+        <java.version>1.7</java.version>
+    </properties>
     <!-- Add typical dependencies for a web application -->
     <dependencies>
         <dependency>
